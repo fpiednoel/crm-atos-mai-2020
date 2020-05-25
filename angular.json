@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "crm-atos-mai"
+    }
+  },
+  "defaultProject": "crm-atos-mai",
+  "cli": {
+    "analytics": "99a4e224-d710-4710-b69b-c9975b4b0a16"
+  }
 }
