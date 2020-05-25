@@ -7,6 +7,8 @@ import { IconsModule } from './icons/icons.module';
 import { LoginModule } from './login/login.module';
 import { TextModule } from './text/text.module';
 import { UiModule } from './ui/ui.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { UiModule } from './ui/ui.module';
     LoginModule,
     TextModule,
     IconsModule,
-    CoreModule
+    CoreModule,
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
