@@ -9,6 +9,7 @@ import { TextModule } from './text/text.module';
 import { UiModule } from './ui/ui.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     IconsModule,
     CoreModule,
     NgbModule,
+    HttpClientModule,
     FontAwesomeModule
   ],
   providers: [],
