@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from '../../services/orders.service';
 import { Order } from 'src/app/shared/models/order';
+import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 
 @Component({
   selector: 'app-page-list-orders',
@@ -11,6 +12,7 @@ export class PageListOrdersComponent implements OnInit {
 
   public collection : Order[];
   public headers : string[];
+  public states = Object.values(StateOrder);
 
   constructor(private os : OrdersService) { }
 
@@ -28,5 +30,10 @@ export class PageListOrdersComponent implements OnInit {
       'State'
     ];
   }
-
+  public changeState(item : Order, event){
+    this.os.changeState(item,event.target.value).subscribe((res) => {
+        //traiter reponse API
+        item.state = res.state;
+      });
+  }
 }
