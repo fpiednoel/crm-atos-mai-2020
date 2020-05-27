@@ -5,13 +5,15 @@ import { BtnComponent } from './components/btn/btn.component';
 import { TotalPipe } from './pipes/total.pipe';
 import { StateDirective } from './directives/state.directive';
 import { TableDarkComponent } from './components/table-dark/table-dark.component';
+import { Router, RouterModule } from '@angular/router';
 
 
 
 @NgModule({
   declarations: [TableLightComponent, BtnComponent, TotalPipe, StateDirective, TableDarkComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [TableLightComponent, BtnComponent, TotalPipe, StateDirective, TableDarkComponent]
 })
