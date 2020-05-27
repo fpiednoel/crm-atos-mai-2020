@@ -14,7 +14,6 @@ export class TableLightComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log(this.headers);
   }
 
 }
