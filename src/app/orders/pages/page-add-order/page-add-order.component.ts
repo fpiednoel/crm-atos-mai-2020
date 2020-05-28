@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Order } from 'src/app/shared/models/order';
 import { OrdersService } from '../../services/orders.service';
 
@@ -14,11 +14,15 @@ export class PageAddOrderComponent implements OnInit {
   public subtitle : string;
 
   constructor(private os : OrdersService,
-    private router : Router) { }
+    private router : Router,
+    private route : ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.title = 'Orders';
-    this.subtitle = 'Add an order';
+
+    this.route.data.subscribe((datas) => {
+      this.title = datas.title
+      this.subtitle = datas.subtitle;
+    })
   }
 
   public add(item : Order){

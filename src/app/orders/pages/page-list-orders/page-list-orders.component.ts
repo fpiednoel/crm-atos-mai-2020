@@ -4,6 +4,7 @@ import { Order } from 'src/app/shared/models/order';
 import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 import { Btn } from 'src/app/shared/interfaces/btn';
 import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-page-list-orders',
@@ -21,11 +22,10 @@ export class PageListOrdersComponent implements OnInit,OnDestroy {
   public title : string;
   public subtitle : string;
 
-  constructor(private os : OrdersService) { }
+  constructor(private os : OrdersService,
+    public route : ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.title = 'Orders';
-    this.subtitle = 'All orders';
 
     this.btnRoute = {
       label : 'Add an order',
