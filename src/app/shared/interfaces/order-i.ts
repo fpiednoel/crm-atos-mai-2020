@@ -1,7 +1,7 @@
 import { StateOrder} from '../enums/state-order.enum';
 
 export interface OrderI {
-  tjmHt: number;
+      tjmHt: number;
       nbJours: number;
       tva: number;
       state: StateOrder;

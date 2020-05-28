@@ -11,6 +11,12 @@
   .state-confirmed {
     background: $color-success;
   }
+  .state-actif {
+    background: $color-success;
+  }
+  .state-inactif {
+    background: $color-error;
+  }
 }
 
 app-template-a {
