@@ -14,3 +14,23 @@ a, button {
     background: darken($color3, 10);
   }
 }
+
+:host-context(app-template-a) {
+  a, button {
+    background: $color1;
+    &:hover {
+      text-decoration: none;
+      background: darken($color1, 10);
+    }
+  }
+}
+
+:host-context(app-template-b) {
+  a, button {
+    background: $color2;
+    &:hover {
+      text-decoration: none;
+      background: darken($color2, 10);
+    }
+  }
+}

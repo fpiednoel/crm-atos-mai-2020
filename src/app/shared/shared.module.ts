@@ -6,6 +6,8 @@ import { TotalPipe } from './pipes/total.pipe';
 import { StateDirective } from './directives/state.directive';
 import { TableDarkComponent } from './components/table-dark/table-dark.component';
 import { Router, RouterModule } from '@angular/router';
+import { TemplatesModule } from '../templates/templates.module';
+import { TextModule } from '../text/text.module';
 
 
 
@@ -13,8 +15,10 @@ import { Router, RouterModule } from '@angular/router';
   declarations: [TableLightComponent, BtnComponent, TotalPipe, StateDirective, TableDarkComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    TemplatesModule,
+    TextModule
   ],
-  exports: [TableLightComponent, BtnComponent, TotalPipe, StateDirective, TableDarkComponent]
+  exports: [TableLightComponent, BtnComponent, TotalPipe, StateDirective, TableDarkComponent, TemplatesModule, TextModule]
 })
 export class SharedModule { }
