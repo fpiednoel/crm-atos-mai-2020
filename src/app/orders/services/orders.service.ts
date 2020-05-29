@@ -54,6 +54,9 @@ public delete(item:Order ) : Observable<Order>{
   return this.http.delete<Order>(`${this.urlApi}orders/${item.id}`);
 }
 
+public getItemById(id:string) : Observable<Order> {
+  return this.http.get<Order>(`${this.urlApi}orders/${id}`);
+}
   // get item by id
 
 }

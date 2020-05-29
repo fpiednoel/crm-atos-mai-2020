@@ -4,7 +4,7 @@ import { Order } from 'src/app/shared/models/order';
 import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 import { Btn } from 'src/app/shared/interfaces/btn';
 import { Observable, Subject } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-list-orders',
@@ -23,7 +23,8 @@ export class PageListOrdersComponent implements OnInit,OnDestroy {
   public subtitle : string;
 
   constructor(private os : OrdersService,
-    public route : ActivatedRoute) { }
+    public route : ActivatedRoute,
+    private router : Router) { }
 
   ngOnInit(): void {
 
@@ -81,5 +82,9 @@ export class PageListOrdersComponent implements OnInit,OnDestroy {
         this.collection$.next(col);
       })
     })
+  }
+
+  public edit(item : Order){
+    this.router.navigate(['orders/edit/'+item.id]);
   }
 }
