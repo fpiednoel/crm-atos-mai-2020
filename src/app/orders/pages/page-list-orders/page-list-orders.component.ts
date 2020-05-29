@@ -5,6 +5,7 @@ import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 import { Btn } from 'src/app/shared/interfaces/btn';
 import { Observable, Subject } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NavLinks } from 'src/app/shared/interfaces/nav-links';
 
 @Component({
   selector: 'app-page-list-orders',
@@ -16,11 +17,14 @@ export class PageListOrdersComponent implements OnInit,OnDestroy {
   public headers : string[];
   public states = Object.values(StateOrder);
   public btnRoute : Btn;
+  public btnRouteDetail : Btn;
+  public btnRouteComment : Btn;
   public btnHref : Btn;
   public btnAction : Btn;
   public collection$ : Subject<Order[]> = new Subject();
   public title : string;
   public subtitle : string;
+  public navLinks : NavLinks[] ;
 
   constructor(private os : OrdersService,
     public route : ActivatedRoute,
@@ -28,10 +32,24 @@ export class PageListOrdersComponent implements OnInit,OnDestroy {
 
   ngOnInit(): void {
 
+this.navLinks = [] = [{'route' : 'detail', 'label' : 'Détail'},
+{'route' : 'comment', 'label' : 'Comment'}];
+
     this.btnRoute = {
       label : 'Add an order',
       route : 'add'
     }
+
+    this.btnRouteDetail = {
+      label : 'Detail an order',
+      route : 'detail'
+    }
+
+    this.btnRouteComment = {
+      label : 'Comment an order',
+      route : 'comment'
+    }
+
     this.btnHref = {
       label : 'Go to google',
       href : 'http://google.fr'

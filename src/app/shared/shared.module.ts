@@ -9,11 +9,12 @@ import { Router, RouterModule } from '@angular/router';
 import { TemplatesModule } from '../templates/templates.module';
 import { TextModule } from '../text/text.module';
 import { IconsModule } from '../icons/icons.module';
+import { NavVerticalComponent } from './components/nav-vertical/nav-vertical.component';
 
 
 
 @NgModule({
-  declarations: [TableLightComponent, BtnComponent, TotalPipe, StateDirective, TableDarkComponent],
+  declarations: [TableLightComponent, BtnComponent, TotalPipe, StateDirective, TableDarkComponent, NavVerticalComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -22,6 +23,6 @@ import { IconsModule } from '../icons/icons.module';
     IconsModule
   ],
   exports: [TableLightComponent, BtnComponent, TotalPipe, StateDirective,
-     TableDarkComponent, TemplatesModule, TextModule, IconsModule]
+     TableDarkComponent, TemplatesModule, TextModule, IconsModule, NavVerticalComponent]
 })
 export class SharedModule { }

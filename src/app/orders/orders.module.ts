@@ -8,11 +8,13 @@ import { PageListOrdersComponent } from './pages/page-list-orders/page-list-orde
 import { ReactiveFormsModule } from '@angular/forms';
 import { IconsModule } from '../icons/icons.module';
 import { PageEditOrderComponent } from './pages/page-edit-order/page-edit-order.component';
+import { PageDetailOrderComponent } from './pages/page-detail-order/page-detail-order.component';
+import { PageCommentOrderComponent } from './pages/page-comment-order/page-comment-order.component';
 
 
 
 @NgModule({
-  declarations: [PageListOrdersComponent, PageAddOrderComponent, FormAddOrderComponent, PageEditOrderComponent],
+  declarations: [PageListOrdersComponent, PageAddOrderComponent, FormAddOrderComponent, PageEditOrderComponent, PageDetailOrderComponent, PageCommentOrderComponent],
   imports: [
     CommonModule,
     OrdersRoutingModule,
