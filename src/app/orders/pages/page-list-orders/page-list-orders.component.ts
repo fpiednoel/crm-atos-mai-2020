@@ -3,7 +3,7 @@ import { OrdersService } from '../../services/orders.service';
 import { Order } from 'src/app/shared/models/order';
 import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 import { Btn } from 'src/app/shared/interfaces/btn';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -18,7 +18,7 @@ export class PageListOrdersComponent implements OnInit,OnDestroy {
   public btnRoute : Btn;
   public btnHref : Btn;
   public btnAction : Btn;
-  public collection$ : Observable<Order[]>;
+  public collection$ : Subject<Order[]> = new Subject();
   public title : string;
   public subtitle : string;
 
@@ -44,7 +44,9 @@ export class PageListOrdersComponent implements OnInit,OnDestroy {
       this.collection = datas;
     });*/
 
-    this.collection$ = this.os.collection;
+    this.os.collection.subscribe((col) => {
+      this.collection$.next(col);
+    });
 
     this.headers = [
       'Type',
@@ -53,7 +55,8 @@ export class PageListOrdersComponent implements OnInit,OnDestroy {
       'Tjm HT',
       'Total HT',
       'Total TTC',
-      'State'
+      'State',
+      'Action'
     ];
   }
 
@@ -71,4 +74,12 @@ export class PageListOrdersComponent implements OnInit,OnDestroy {
    public openPopUp(){
      alert('open pop up');
    }
+
+   public delete(item : Order){
+     this.os.delete(item).subscribe((res) => {
+      this.os.collection.subscribe((col) => {
+        this.collection$.next(col);
+      })
+    })
+  }
 }

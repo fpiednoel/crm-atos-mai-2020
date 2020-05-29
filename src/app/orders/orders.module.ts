@@ -6,6 +6,7 @@ import { OrdersRoutingModule } from './orders-routing.module';
 import { PageAddOrderComponent } from './pages/page-add-order/page-add-order.component';
 import { PageListOrdersComponent } from './pages/page-list-orders/page-list-orders.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { IconsModule } from '../icons/icons.module';
 
 
 
